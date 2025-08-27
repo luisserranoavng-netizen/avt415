@@ -1,2 +1,2 @@
 # avt415
-website for avt415 web design (lool)
+website for avt415 web design
