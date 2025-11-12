@@ -48,7 +48,7 @@ body {
 
 .left-eye {
     left: 40px;
-    transform: rotate(-45deg);
+    transform: rotate(45deg);
 }
 
 .right-eye {
