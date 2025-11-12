@@ -1,48 +1,88 @@
 body {
 	background-color: black;
-}
-.pumpkin-container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 300px; /* Adjust as needed */
-}
-
-.pumpkin-segment {
-  background-color: #ff8c00; /* Pumpkin orange */
-  border-radius: 50%; /* Makes them elliptical */
-  position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
 }
 
-.center {
-  width: 120px;
-  height: 180px;
-  z-index: 2; /* Ensures it's on top */
+.head {
+    width: 200px;
+    height: 200px;
+    background-color: #555; /* Dark grey */
+    border-radius: 50%; /* Human head shape */
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.left-inner,
-.right-inner {
-  width: 110px;
-  height: 170px;
-  margin: 0 -40px; /* Overlap segments */
-  z-index: 1;
+.eye {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: red; /* Heart color */
+    top: 50px;
+    /* The heart shape is created using CSS pseudo-elements */
 }
 
-.left-outer,
-.right-outer {
-  width: 100px;
-  height: 160px;
-  margin: 0 -40px; /* Overlap segments */
-  z-index: 0;
+.eye::before,
+.eye::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    border-radius: 50%;
 }
 
-.pumpkin-stem {
-  position: absolute;
-  top: -30px; /* Position above the pumpkin */
-  width: 20px;
-  height: 40px;
-  background-color: #401d03; /* Brown for the stem */
-  border-radius: 5px 5px 0 0;
-  z-index: 3;
+.eye::before {
+    left: -50%;
+    top: 0;
 }
+
+.eye::after {
+    top: -50%;
+    right: 0;
+}
+
+.left-eye {
+    left: 40px;
+    transform: rotate(-45deg);
+}
+
+.right-eye {
+    right: 40px;
+    transform: rotate(45deg);
+}
+
+.mouth {
+    position: absolute;
+    width: 80px;
+    height: 20px;
+    top: 130px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* The 'X' is created using two overlapping bars */
+}
+
+.mouth::before,
+.mouth::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 10px; /* Thickness of the 'X' bars */
+    background-color: white; /* 'X' color */
+    border-radius: 5px;
+}
+
+.mouth::before {
+    transform: rotate(45deg);
+    top: 5px; /* Center the 'X' vertically within its container */
+}
+
+.mouth::after {
+    transform: rotate(-45deg);
+    top: 5px;
+}
+
